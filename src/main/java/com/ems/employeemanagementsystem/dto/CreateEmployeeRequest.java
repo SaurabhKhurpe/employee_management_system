@@ -1,9 +1,7 @@
 package com.ems.employeemanagementsystem.dto;
 
 import lombok.*;
-
-import javax.validation.constraints.NotNull;
-
+import jakarta.validation.constraints.NotNull;
 import com.ems.employeemanagementsystem.model.Employee;
 
 @Getter
@@ -21,11 +19,20 @@ public class CreateEmployeeRequest {
     @NotNull
     private String emailId;
 
+    private String department;
+
+    private String designation;
+
+    private Double salary;
+
     public Employee to() {
         return Employee.builder()
                 .firstName(this.firstName)
                 .lastName(this.lastName)
                 .emailId(this.emailId)
+                .department(this.department)
+                .designation(this.designation)
+                .salary(this.salary)
                 .build();
     }
 }
