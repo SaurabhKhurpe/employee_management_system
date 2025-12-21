@@ -16,7 +16,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@JsonInclude(JsonInclude.Include.NON_NULL) // This excludes null fields from JSON response
+@ToString
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Employee {
 	@Id
 	@NotNull

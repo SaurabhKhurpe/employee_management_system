@@ -1,7 +1,7 @@
 package com.ems.employeemanagementsystem.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
-import jakarta.validation.constraints.NotNull;
 import com.ems.employeemanagementsystem.model.Employee;
 
 @Getter
@@ -10,13 +10,13 @@ import com.ems.employeemanagementsystem.model.Employee;
 @AllArgsConstructor
 @Builder
 public class CreateEmployeeRequest {
-    @NotNull
+    @NotBlank(message = "First name is required")
     private String firstName;
 
-    @NotNull
+    @NotBlank(message = "Last name is required")
     private String lastName;
 
-    @NotNull
+    @NotBlank(message = "Email ID is required")
     private String emailId;
 
     private String department;
